@@ -177,6 +177,16 @@
             text-align: center;
         }
 
+        .profile-photo {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+            display: block;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
         .profile-placeholder {
             width: 300px;
             height: 300px;
@@ -220,6 +230,14 @@
             color: #2c5aa0;
             margin-bottom: 1rem;
             font-size: 1.3rem;
+        }
+
+        .sailing-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 1rem;
         }
 
         .image-placeholder {
@@ -407,7 +425,7 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <div class="logo">Joanne</div>
+            <div class="logo">Joanne Jiang</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -422,7 +440,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Joanne</h1>
+            <h1>Joanne Jiang</h1>
             <p class="hero-tagline">Sailor • Student • Dreamer</p>
             <p class="hero-description">From Shanghai to New Zealand - Charting new waters and chasing dreams</p>
         </div>
@@ -433,7 +451,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>Hi! I'm Joanne, a 13-year-old sailor and student from Shanghai, China. This month marks the beginning of an incredible new chapter in my life as I embark on my international student journey in New Zealand.</p>
+                <p>Hi! I'm Joanne Jiang, a 13-year-old sailor and student from Shanghai, China. This month marks the beginning of an incredible new chapter in my life as I embark on my international student journey in New Zealand.</p>
                 
                 <p>Born and raised in the vibrant city of Shanghai, I've always been drawn to the water and the thrill of sailing. As a youth athlete, I compete in both Optimist (OP) and Nacra 15 classes, constantly pushing myself to improve and reach new heights in the sport I love.</p>
                 
@@ -442,9 +460,12 @@
                 <p>This website is my digital space to share my journey, celebrate my achievements, and connect with others who share similar interests. Welcome aboard!</p>
             </div>
             <div class="about-image">
-                <div class="profile-placeholder">
-                    Your Photo Here
-                </div>
+                <!-- REPLACE THIS: Change "joanne-profile.jpg" to your actual filename -->
+                <img src="images/joanne-profile.jpg" alt="Joanne's Profile Photo" class="profile-photo">
+                <!-- 
+                IF YOU DON'T HAVE A PHOTO YET, keep this placeholder instead:
+                <div class="profile-placeholder">Your Photo Here</div>
+                -->
             </div>
         </div>
     </section>
@@ -454,17 +475,32 @@
         <h2 class="section-title">My Sailing Journey</h2>
         <div class="sailing-grid">
             <div class="sailing-card">
+                <!-- REPLACE THIS: Change filename to your actual OP sailing photo -->
+                <img src="images/joanne-sailing-op.jpg" alt="Joanne sailing Optimist" class="sailing-image">
+                <!-- 
+                IF YOU DON'T HAVE A PHOTO YET, use placeholder:
                 <div class="image-placeholder">OP Sailing Photo</div>
+                -->
                 <h3>Optimist Class</h3>
                 <p>The Optimist dinghy is where my sailing journey began. This single-handed boat has taught me the fundamentals of sailing, from reading the wind to perfecting my technique. Every race is a learning experience that builds my confidence on the water.</p>
             </div>
             <div class="sailing-card">
+                <!-- REPLACE THIS: Change filename to your actual Nacra 15 photo -->
+                <img src="images/joanne-sailing-nacra.jpg" alt="Joanne sailing Nacra 15" class="sailing-image">
+                <!-- 
+                IF YOU DON'T HAVE A PHOTO YET, use placeholder:
                 <div class="image-placeholder">Nacra 15 Photo</div>
+                -->
                 <h3>Nacra 15 Class</h3>
                 <p>Stepping up to the Nacra 15 catamaran has been an exciting challenge. This high-performance boat demands precision, teamwork, and quick decision-making. The speed and agility of the Nacra 15 make every sail an adrenaline-filled adventure.</p>
             </div>
             <div class="sailing-card">
+                <!-- REPLACE THIS: Change filename to your actual competition photo -->
+                <img src="images/joanne-competition.jpg" alt="Joanne at sailing competition" class="sailing-image">
+                <!-- 
+                IF YOU DON'T HAVE A PHOTO YET, use placeholder:
                 <div class="image-placeholder">Competition Photo</div>
+                -->
                 <h3>Competitions & Achievements</h3>
                 <p>Competing in youth sailing events has been incredibly rewarding. Each regatta brings new challenges and opportunities to test my skills against other talented sailors. The competitive spirit drives me to constantly improve.</p>
             </div>
@@ -505,6 +541,7 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Born in Shanghai</h3>
+                    <h4>September 2011</h4>
                     <p>My story begins in the bustling metropolis of Shanghai, where I developed my love for the water and sailing.</p>
                 </div>
                 <div class="timeline-dot"></div>
@@ -512,21 +549,24 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>Started Sailing</h3>
+                    <h4>July 2019</h4>
                     <p>Began my sailing journey with Optimist dinghies, learning the basics and falling in love with the sport.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Youth Athlete</h3>
-                    <p>Progressed to competitive sailing, racing in both OP and Nacra 15 classes at various regattas.</p>
+                    <h3>Youth Athlete Career</h3>
+                    <h4>2019-2025</h4>
+                    <p>Progressed to competitive sailing, racing in both OP and Nacra 15 classes at various regattas. Achieved and certified as National First Grade Athlete in 2023 - a proud milestone in my sailing career!</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>New Zealand Adventure</h3>
-                    <p>This month, I'm starting my international student journey in New Zealand - a new chapter begins!</p>
+                    <h4>July 2025</h4>
+                    <p>Starting my international student journey in New Zealand - a new chapter begins with new waters to explore!</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -547,7 +587,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Joanne. All rights reserved. | Sailing towards new horizons 🌊</p>
+        <p>&copy; 2025 Joanne Jiang. All rights reserved. | Sailing towards new horizons 🌊</p>
     </footer>
 
     <script>
