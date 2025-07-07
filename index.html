@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanne - Sailor, Student, Dreamer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><path d="M200 300 Q400 100 600 300 T1000 300 V1000 H0 V300 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+            animation: wave 20s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(-50px); }
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c5aa0;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .profile-placeholder {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Sailing Section */
+        .sailing {
+            background: white;
+        }
+
+        .sailing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .sailing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .sailing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .sailing-card h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Interests Section */
+        .interests {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .interest-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: scale(1.05);
+        }
+
+        .interest-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        /* Journey Section */
+        .journey {
+            background: white;
+        }
+
+        .journey-timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 45%;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .profile-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+
+            .social-links {
+                flex-wrap: wrap;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-content {
+                width: 90%;
+            }
+
+            .journey-timeline::before {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="logo">Joanne</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#sailing">Sailing</a></li>
+                <li><a href="#interests">Interests</a></li>
+                <li><a href="#journey">Journey</a></li>
+                <li><a href="#social">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Joanne</h1>
+            <p class="hero-tagline">Sailor • Student • Dreamer</p>
+            <p class="hero-description">From Shanghai to New Zealand - Charting new waters and chasing dreams</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi! I'm Joanne, a 13-year-old sailor and student from Shanghai, China. This month marks the beginning of an incredible new chapter in my life as I embark on my international student journey in New Zealand.</p>
+                
+                <p>Born and raised in the vibrant city of Shanghai, I've always been drawn to the water and the thrill of sailing. As a youth athlete, I compete in both Optimist (OP) and Nacra 15 classes, constantly pushing myself to improve and reach new heights in the sport I love.</p>
+                
+                <p>When I'm not on the water, you'll find me immersed in Japanese anime culture or jamming to my favorite K-pop groups. I believe that pursuing your passions - whether it's sailing across the harbor or discovering new anime series - is what makes life truly exciting.</p>
+                
+                <p>This website is my digital space to share my journey, celebrate my achievements, and connect with others who share similar interests. Welcome aboard!</p>
+            </div>
+            <div class="about-image">
+                <div class="profile-placeholder">
+                    Your Photo Here
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sailing Section -->
+    <section id="sailing" class="sailing section">
+        <h2 class="section-title">My Sailing Journey</h2>
+        <div class="sailing-grid">
+            <div class="sailing-card">
+                <div class="image-placeholder">OP Sailing Photo</div>
+                <h3>Optimist Class</h3>
+                <p>The Optimist dinghy is where my sailing journey began. This single-handed boat has taught me the fundamentals of sailing, from reading the wind to perfecting my technique. Every race is a learning experience that builds my confidence on the water.</p>
+            </div>
+            <div class="sailing-card">
+                <div class="image-placeholder">Nacra 15 Photo</div>
+                <h3>Nacra 15 Class</h3>
+                <p>Stepping up to the Nacra 15 catamaran has been an exciting challenge. This high-performance boat demands precision, teamwork, and quick decision-making. The speed and agility of the Nacra 15 make every sail an adrenaline-filled adventure.</p>
+            </div>
+            <div class="sailing-card">
+                <div class="image-placeholder">Competition Photo</div>
+                <h3>Competitions & Achievements</h3>
+                <p>Competing in youth sailing events has been incredibly rewarding. Each regatta brings new challenges and opportunities to test my skills against other talented sailors. The competitive spirit drives me to constantly improve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="interests section">
+        <h2 class="section-title">My Interests</h2>
+        <div class="interests-grid">
+            <div class="interest-card">
+                <div class="interest-icon">⛵</div>
+                <h3>Sailing</h3>
+                <p>My passion for sailing drives everything I do. The freedom of being on the water and the challenge of racing keeps me motivated.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🎌</div>
+                <h3>Anime Culture</h3>
+                <p>I love exploring Japanese anime and manga. The storytelling, art style, and unique cultural perspectives fascinate me.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🎵</div>
+                <h3>K-Pop</h3>
+                <p>K-pop music energizes me! The choreography, vocals, and production quality of Korean pop groups are incredible.</p>
+            </div>
+            <div class="interest-card">
+                <div class="interest-icon">🌏</div>
+                <h3>Cultural Exchange</h3>
+                <p>Moving to New Zealand excites me because I'll experience new cultures while sharing my own Chinese heritage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section id="journey" class="journey section">
+        <h2 class="section-title">My Journey</h2>
+        <div class="journey-timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Born in Shanghai</h3>
+                    <p>My story begins in the bustling metropolis of Shanghai, where I developed my love for the water and sailing.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Started Sailing</h3>
+                    <p>Began my sailing journey with Optimist dinghies, learning the basics and falling in love with the sport.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Youth Athlete</h3>
+                    <p>Progressed to competitive sailing, racing in both OP and Nacra 15 classes at various regattas.</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>New Zealand Adventure</h3>
+                    <p>This month, I'm starting my international student journey in New Zealand - a new chapter begins!</p>
+                </div>
+                <div class="timeline-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social" class="social-media section">
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Follow my journey and connect with me on social media!</p>
+        <div class="social-links">
+            <a href="#" class="social-link" title="Instagram">📷</a>
+            <a href="#" class="social-link" title="TikTok">🎵</a>
+            <a href="#" class="social-link" title="YouTube">📹</a>
+            <a href="#" class="social-link" title="Twitter">🐦</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Joanne. All rights reserved. | Sailing towards new horizons 🌊</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and timeline items
+        document.querySelectorAll('.sailing-card, .interest-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
