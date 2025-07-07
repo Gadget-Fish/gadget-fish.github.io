@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanne - Sailor, Student, Dreamer</title>
+    <title>Joanne Jiang - Sailor, Student, Dreamer</title>
     <style>
         * {
             margin: 0;
@@ -66,6 +66,20 @@
         .hero {
             height: 100vh;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            /* REPLACE THIS: Add your background image */
+            background-image: 
+                linear-gradient(rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.7)),
+                url('images/hero-background.jpg');
+            /* 
+            INSTRUCTIONS FOR BACKGROUND IMAGE:
+            1. Upload a hero image to your images folder (name it: hero-background.jpg)
+            2. Recommended size: 1920x1080px or larger
+            3. Good options: sailing photo, ocean view, or New Zealand landscape
+            4. If you don't have an image yet, the gradient will still look good
+            */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -296,6 +310,7 @@
             margin-top: 2rem;
         }
 
+        /* Social Media Icons */
         .social-link {
             display: flex;
             align-items: center;
@@ -309,11 +324,39 @@
             font-size: 1.5rem;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
         .social-link:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .social-link img {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        /* Social Media Platform Colors */
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+        }
+
+        .social-link.tiktok:hover {
+            background: #000000;
+        }
+
+        .social-link.youtube:hover {
+            background: #ff0000;
+        }
+
+        .social-link.twitter:hover {
+            background: #1da1f2;
+        }
+
+        .social-link.weibo:hover {
+            background: #e6162d;
         }
 
         /* Journey Section */
@@ -354,6 +397,13 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             width: 45%;
             position: relative;
+        }
+
+        .timeline-content h4 {
+            color: #667eea;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         .timeline-dot {
@@ -578,10 +628,27 @@
         <h2 class="section-title">Let's Connect</h2>
         <p>Follow my journey and connect with me on social media!</p>
         <div class="social-links">
-            <a href="#" class="social-link" title="Instagram">📷</a>
-            <a href="#" class="social-link" title="TikTok">🎵</a>
-            <a href="#" class="social-link" title="YouTube">📹</a>
-            <a href="#" class="social-link" title="Twitter">🐦</a>
+            <!-- REPLACE THESE: Update with Joanne's actual social media accounts -->
+            <a href="#" class="social-link instagram" title="Instagram">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/6.23.0/instagram.svg" alt="Instagram">
+            </a>
+            <a href="#" class="social-link tiktok" title="TikTok">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/6.23.0/tiktok.svg" alt="TikTok">
+            </a>
+            <a href="#" class="social-link youtube" title="YouTube">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/6.23.0/youtube.svg" alt="YouTube">
+            </a>
+            <a href="#" class="social-link weibo" title="Weibo">
+                <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/6.23.0/sinaweibo.svg" alt="Weibo">
+            </a>
+            <!-- 
+            TO UPDATE SOCIAL MEDIA LINKS:
+            Replace the # in href="#" with actual URLs like:
+            href="https://instagram.com/joanne_username"
+            href="https://tiktok.com/@joanne_username"
+            href="https://youtube.com/@joanne_username"
+            href="https://weibo.com/joanne_username"
+            -->
         </div>
     </section>
 
