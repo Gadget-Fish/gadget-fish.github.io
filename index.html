@@ -75,7 +75,7 @@
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             background-image: 
                 linear-gradient(rgba(38, 54, 95, 0.56), rgba(44, 75, 112, 0.5)),
-                url('images/hero-new-zealand.jpg');
+                url('images/hero-background.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -368,7 +368,8 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .social-link img {
+        .social-link img,
+        .social-link svg {
             width: 30px;
             height: 30px;
             object-fit: contain;
@@ -389,6 +390,10 @@
 
         .social-link.rednote:hover {
             background: #ff2442;
+        }
+
+        .social-link.email:hover {
+            background: #2f80ed;
         }
 
         /* Journey Section */
@@ -556,7 +561,7 @@
                 <p>This website is my digital space to share my journey, celebrate my achievements, and connect with others who share similar interests. Welcome aboard!</p>
             </div>
             <div class="about-image">
-                <img src="images/joanne-profile-anime.jpg" alt="Joanne's anime style profile portrait" class="profile-photo">
+                <img src="images/joanne-profile.jpg" alt="Joanne's anime style profile portrait" class="profile-photo">
                 <!-- 
                 IF YOU DON'T HAVE A PHOTO YET, keep this placeholder instead:
                 <div class="profile-placeholder">Your Photo Here</div>
@@ -671,7 +676,7 @@
     <!-- Social Media Section -->
     <section id="social" class="social-media section">
         <h2 class="section-title">Let's Connect</h2>
-        <p>Follow my journey and connect with me on social media!</p>
+        <p>Follow my journey and connect with me on social media or email!</p>
         <div class="social-links">
             <a href="#" class="social-link instagram" title="Instagram">
                 <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/6.23.0/instagram.svg" alt="Instagram">
@@ -685,6 +690,11 @@
             <a href="#" class="social-link rednote" title="Rednote">
                 <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/xiaohongshu.svg" alt="Rednote">
             </a>
+            <a href="mailto:jowato@outlook.com" class="social-link email" title="Email">
+                <svg viewBox="0 0 24 24" aria-label="Email" role="img">
+                    <path fill="currentColor" d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+                </svg>
+            </a>
             <!-- 
             TO UPDATE SOCIAL MEDIA LINKS:
             Replace the # in href="#" with actual URLs like:
@@ -692,6 +702,7 @@
             href="https://snapchat.com/add/joanne_username"
             href="https://tiktok.com/@joanne_username"
             href="https://www.xiaohongshu.com/user/profile/joanne_user_id"
+            href="mailto:jowato@outlook.com"
             -->
         </div>
     </section>
